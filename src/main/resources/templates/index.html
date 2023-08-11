@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="" th:href="@{/css/headerstyle.css}"  />
+</head>
+<body>
+
+<header>
+    <div class="inner">
+        <div class="logo">
+            <div>
+                <img src="" alt="logo">
+            </div>
+        </div>
+
+        <nav>
+            <li><span><a href="">Catalog</a></span></li>
+            <li sec:authorize="!isAnonymous()"><span><a th:href="@{/likes}">Likes</a></span></li>
+            <li><span><a href="">News</a></span></li>
+            <li sec:authorize="!isAnonymous()"><span><a th:href="@{/logout}" class="button">log out</a></span></li>
+            <li sec:authorize="isAnonymous()"><span><a th:href="@{/login}" class="button">log in</a></span></li>
+        </nav>
+    </div>
+</header>
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+<center>
+    <form th:method="POST" th:action="@{/gameSearch}">
+        <input type="text" id="gameName" name="gameName"/>
+        <input type="submit" value="Create!"/>
+    </form>
+</center>
+
+
+</body>
+</html>

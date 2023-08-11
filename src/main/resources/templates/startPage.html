@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div style="text-align:right" sec:authorize="!isAnonymous()">
+    <a  th:href="@{/logout}">log out</a>
+</div>
+<div style="text-align:right" sec:authorize="isAnonymous()">
+    <a  th:href="@{/login}">log in</a>
+</div>
+
+<div style="text-align:center">
+    <h2>this is a start page</h2>
+</div>
+
+</body>
+</html>
